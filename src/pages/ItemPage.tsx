@@ -7,7 +7,6 @@ import { useGetOneBookQuery } from "../store";
 const ItemPage = () => {
   const { id } = useParams();
   const { data, isFetching, isError } = useGetOneBookQuery(id as string);
-  console.log(data);
 
   const image = getImage();
 

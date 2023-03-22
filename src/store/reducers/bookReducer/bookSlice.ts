@@ -10,7 +10,7 @@ const initialState: BookStateProps = {
   category: CatsEnum.ALL,
   sortBy: SortByEnum.RELEVANCE,
   query: "js",
-  limit: 5,
+  limit: 30,
   offset: 0,
   fetchId: undefined,
   books: [],

@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className="container mx-auto px-4 mb-4">
+      <main className="container mx-auto px-4 mb-32">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/:id" element={<ItemPage />} />

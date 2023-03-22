@@ -24,7 +24,7 @@ const HomePage = () => {
     });
 
   useEffect(() => {
-    if (data && fetchId !== startedTimeStamp) {
+    if (data?.items && fetchId !== startedTimeStamp) {
       const payload: BookAddProps = {
         books: data.items,
         fetchId: startedTimeStamp as number,
@@ -32,6 +32,15 @@ const HomePage = () => {
       dispatch(addBooks(payload));
     }
   }, [data]);
+
+  useEffect(() => {
+    if (books.length > limit) {
+      scroll({
+        top: window.scrollY + window.innerHeight / 2,
+        behavior: "smooth",
+      });
+    }
+  }, [books.length]);
 
   if (isLoading) {
     return <Spinner />;

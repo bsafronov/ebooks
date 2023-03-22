@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../hooks/useRedux";
-import { SortByEnum } from "../../store/reducers/bookReducer/book.types";
+import { SortByEnum } from "../../store/reducers/bookReducer/types/book-state.type";
 import { bookSlice } from "../../store/reducers/bookReducer/bookSlice";
 
 const SortingSelect = () => {
@@ -20,7 +20,7 @@ const SortingSelect = () => {
         name="sortby"
         id="sortby"
         className="w-32 focus:outline-none"
-        defaultValue="relevance"
+        defaultValue={SortByEnum.RELEVANCE}
         onChange={handleSetSortBy}
       >
         {sortBy.map((sort, index) => (

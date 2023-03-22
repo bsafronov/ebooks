@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../hooks/useRedux";
-import { CatsEnum } from "../../store/reducers/bookReducer/book.types";
+import { CatsEnum } from "../../store/reducers/bookReducer/types/book-state.type";
 import { bookSlice } from "../../store/reducers/bookReducer/bookSlice";
 
 const CatsSelect = () => {
@@ -20,7 +20,7 @@ const CatsSelect = () => {
         name="cats"
         id="cats"
         className="w-32 focus:outline-none"
-        defaultValue="all"
+        defaultValue={CatsEnum.ALL}
         onChange={handleSetCategory}
       >
         {cats.map((cat, index) => (

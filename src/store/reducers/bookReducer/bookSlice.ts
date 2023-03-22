@@ -1,9 +1,19 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { BookStateProps, CatsEnum, SortByEnum } from "./book.types";
+import {
+  BookAddProps,
+  BookStateProps,
+  CatsEnum,
+  SortByEnum,
+} from "./types/book-state.type";
 
 const initialState: BookStateProps = {
   category: CatsEnum.ALL,
-  sortBy: SortByEnum.NEWEST,
+  sortBy: SortByEnum.RELEVANCE,
+  query: "js",
+  limit: 5,
+  offset: 0,
+  fetchId: undefined,
+  books: [],
 };
 
 export const bookSlice = createSlice({
@@ -12,9 +22,29 @@ export const bookSlice = createSlice({
   reducers: {
     setCategory(state, action: PayloadAction<CatsEnum>) {
       state.category = action.payload;
+      state.offset = 0;
+      state.books = [];
     },
     setSortBy(state, action: PayloadAction<SortByEnum>) {
       state.sortBy = action.payload;
+      state.offset = 0;
+      state.books = [];
+    },
+    setQuery(state, action: PayloadAction<string>) {
+      state.query = action.payload;
+      state.offset = 0;
+      state.books = [];
+    },
+    loadMore(state) {
+      state.offset += state.limit;
+    },
+    reset(state) {
+      state.offset = 0;
+      state.books = [];
+    },
+    addBooks(state, action: PayloadAction<BookAddProps>) {
+      state.books.push(...action.payload.books);
+      state.fetchId = action.payload.fetchId;
     },
   },
 });

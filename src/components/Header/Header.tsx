@@ -8,7 +8,7 @@ const Header = () => {
       className="text-center"
       style={{
         background:
-          "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), center / cover no-repeat url(./img/book-bg.webp)",
+          "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), center / cover no-repeat url(./img/book-bg.jpeg)",
       }}
     >
       <div className="container px-4 py-4 mx-auto flex flex-col justify-center items-center">

@@ -1,12 +1,18 @@
-import React from "react";
+import { FC } from "react";
 
-const Search = () => {
+interface SearchLogoProps {
+  onClick: () => void;
+}
+
+const SearchLogo: FC<SearchLogoProps> = ({ onClick }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
       viewBox="0 0 55.77 124.72"
+      onClick={onClick}
+      className="cursor-pointer"
     >
       <g
         fill="none"
@@ -32,4 +38,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchLogo;

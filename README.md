@@ -1,30 +1,30 @@
-## ebooks
+# ebooks
 
 Created with React, React-Router-Dom, TS, Redux Toolkit, RTK Query, Tailwind.
 
-Explanation of using libraries:
-# React, TS, Redux
+##Explanation of using libraries:
+### React, TS, Redux
 - according to the task
 
-# Tailwind
+### Tailwind
 - for fast layout
 
-# RTK Query
+### RTK Query
 - it's already included in Redux Toolkit, easy to write API, has a cache mechanism to optimize requests
 
-# React-Router-DOM
+### React-Router-DOM
 - simply for making SPA
 
 =====================================
 
-Объяснение использования библиотек:
-# React, TS, Redux
+##Объяснение использования библиотек:
+### React, TS, Redux
 - по условию задачи
 
-# Tailwind
+### Tailwind
 - для скорости верстки
 
-# RTK Query
+### RTK Query
 - уже встроен в Redux Toolkit, позволяет легче обрабатывать запросы, имеет механизм кеширования данных, чтобы оптимизировать запросы
 
 # React-Router-DOM

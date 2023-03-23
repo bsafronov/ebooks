@@ -27,5 +27,5 @@ Created with React, React-Router-Dom, TS, Redux Toolkit, RTK Query, Tailwind.
 ### RTK Query
 - уже встроен в Redux Toolkit, позволяет легче обрабатывать запросы, имеет механизм кеширования данных, чтобы оптимизировать запросы
 
-# React-Router-DOM
+### React-Router-DOM
 - для построения SPA

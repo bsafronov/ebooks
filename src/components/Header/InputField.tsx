@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/useRedux";
 import { bookSlice } from "../../store/reducers/bookReducer/bookSlice";
 import SearchLogo from "./SearchLogo";
@@ -6,6 +7,7 @@ import SearchLogo from "./SearchLogo";
 const InputField = () => {
   const { setQuery } = bookSlice.actions;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -22,8 +24,10 @@ const InputField = () => {
 
   function handleSearch() {
     const value = inputRef.current?.value;
+
     if (value) {
       dispatch(setQuery(value));
+      navigate("/");
     }
   }
 

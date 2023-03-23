@@ -23,7 +23,7 @@ const ItemPage = () => {
   }
 
   if (isError) {
-    return <Error />;
+    return <Error text="This page doesn't exist" />;
   }
 
   return (

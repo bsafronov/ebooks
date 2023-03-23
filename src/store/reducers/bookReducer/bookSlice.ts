@@ -31,6 +31,7 @@ export const bookSlice = createSlice({
       state.books = [];
     },
     setQuery(state, action: PayloadAction<string>) {
+      if (state.query === action.payload) return;
       state.query = action.payload;
       state.offset = 0;
       state.books = [];

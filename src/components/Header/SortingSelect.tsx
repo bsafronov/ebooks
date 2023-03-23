@@ -1,14 +1,17 @@
 import { useAppDispatch } from "../../hooks/useRedux";
 import { SortByEnum } from "../../store/reducers/bookReducer/types/book-state.type";
 import { bookSlice } from "../../store/reducers/bookReducer/bookSlice";
+import { useNavigate } from "react-router-dom";
 
 const SortingSelect = () => {
   const sortBy = Object.values(SortByEnum);
   const { setSortBy } = bookSlice.actions;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   function handleSetSortBy(e: React.ChangeEvent<HTMLSelectElement>) {
     dispatch(setSortBy(e.target.value as SortByEnum));
+    navigate("/");
   }
 
   return (

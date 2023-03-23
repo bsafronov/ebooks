@@ -1,4 +1,4 @@
-# ebooks
+# EBOOKS
 
 Created with React, React-Router-Dom, TS, Redux Toolkit, RTK Query, Tailwind.
 

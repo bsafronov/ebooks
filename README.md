@@ -2,7 +2,7 @@
 
 Created with React, React-Router-Dom, TS, Redux Toolkit, RTK Query, Tailwind.
 
-##Explanation of using libraries:
+## Explanation of using libraries:
 ### React, TS, Redux
 - according to the task
 
@@ -17,7 +17,7 @@ Created with React, React-Router-Dom, TS, Redux Toolkit, RTK Query, Tailwind.
 
 =====================================
 
-##Объяснение использования библиотек:
+## Объяснение использования библиотек:
 ### React, TS, Redux
 - по условию задачи
 

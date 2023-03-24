@@ -6,10 +6,12 @@ import {
 } from "./types/book-api.type";
 import { CatsEnum } from "./types/book-state.type";
 
+const BASE_URL = "https://www.googleapis.com/books/v1/volumes";
+
 export const bookApi = createApi({
   reducerPath: "bookApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://www.googleapis.com/books/v1/volumes",
+    baseUrl: BASE_URL,
   }),
   endpoints: (build) => ({
     getAllBooks: build.query<BookGetAllResProps, BookGetAllReqProps>({

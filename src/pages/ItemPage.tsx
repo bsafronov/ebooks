@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import EmptyImageLogo from "../components/EmptyImageLogo";
 import Error from "../components/Error";
@@ -8,10 +9,11 @@ const ItemPage = () => {
   const { id } = useParams();
   const { data, isFetching, isError } = useGetOneBookQuery(id as string);
 
-  const image = getImage();
+  const info = data?.volumeInfo;
+  const image = useMemo(() => getImage(), [data]);
 
   function getImage() {
-    const images = data?.volumeInfo.imageLinks;
+    const images = info?.imageLinks;
 
     if (images?.large) return images.large;
     if (images?.thumbnail) return images.thumbnail;
@@ -42,25 +44,28 @@ const ItemPage = () => {
           )}
         </div>
         <div className="py-4 md:p-8 md:w-1/2">
-          {data?.volumeInfo.categories && (
+          {info?.categories && (
             <a className="text-slate-500 block mb-6 text-sm font-semibold">
-              {data?.volumeInfo.categories.join(", ")}
+              {info?.categories.join(", ")}
             </a>
           )}
 
-          {data?.volumeInfo.title && (
-            <h3 className="mb-4 font-bold text-lg">{data.volumeInfo.title}</h3>
+          {info?.title && (
+            <h3 className="mb-4 font-bold text-lg">{info?.title}</h3>
           )}
-          {data?.volumeInfo.authors && (
+          {info?.authors && (
             <a className="underline text-slate-500 text-sm block mb-4">
-              {data?.volumeInfo.authors.join(", ")}
+              {info?.authors.join(", ")}
             </a>
           )}
         </div>
       </div>
-      {data?.volumeInfo.description && (
+      {info?.description && (
         <div className="border border-slate-100 p-4">
-          <p className="text-sm font-semibold">{data.volumeInfo.description}</p>
+          <div
+            className="description"
+            dangerouslySetInnerHTML={{ __html: info?.description }}
+          ></div>
         </div>
       )}
     </>

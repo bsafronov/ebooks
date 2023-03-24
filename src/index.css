@@ -5,3 +5,15 @@
 a {
   cursor: pointer;
 }
+
+.description {
+  @apply text-base;
+}
+
+.description p {
+  @apply mb-4 font-normal;
+}
+
+.description ul {
+  @apply list-inside list-disc font-normal mb-4;
+}

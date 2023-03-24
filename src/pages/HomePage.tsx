@@ -22,6 +22,8 @@ const HomePage = () => {
       limit,
       offset,
     });
+  const isMoreAvailable =
+    !isFetching && books.length < (data?.totalItems as number);
 
   useEffect(() => {
     if (data?.items && fetchId !== startedTimeStamp) {
@@ -55,9 +57,7 @@ const HomePage = () => {
       <Counter count={data?.totalItems} />
       <BookList books={books} />
       {isFetching && <Spinner />}
-      {!isFetching && books.length < (data?.totalItems as number) && (
-        <LoadButton />
-      )}
+      {isMoreAvailable && <LoadButton />}
     </>
   );
 };

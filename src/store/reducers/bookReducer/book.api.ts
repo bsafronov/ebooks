@@ -7,6 +7,7 @@ import {
 import { CatsEnum } from "./types/book-state.type";
 
 const BASE_URL = "https://www.googleapis.com/books/v1/volumes";
+const BOOKS_API_KEY = "AIzaSyBwaYesV6m4cbZCxq0kNxuVNpSrPtSXRtQ";
 
 export const bookApi = createApi({
   reducerPath: "bookApi",
@@ -22,6 +23,7 @@ export const bookApi = createApi({
           `&orderBy=${sortBy}`,
           `&maxResults=${limit}`,
           `&startIndex=${offset}`,
+          `&key=${BOOKS_API_KEY}`,
         ].join(""),
     }),
     getOneBook: build.query<BookProps, string>({
